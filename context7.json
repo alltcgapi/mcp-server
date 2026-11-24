@@ -1,0 +1,13 @@
+{
+  "$schema": "https://context7.com/schema/context7.json",
+  "projectTitle": "alltcgapi MCP server",
+  "description": "MCP server for alltcgapi: cards, sets, sealed products and current Cardmarket and TCGplayer prices across 19 trading card games.",
+  "excludeFolders": ["node_modules", "dist", "tests"],
+  "rules": [
+    "Cardmarket quotes are in EUR and TCGplayer quotes in USD: never add, average or convert them into one figure.",
+    "Quote every price with its source and its as_of date.",
+    "Card and sealed ids are UUIDs: find them with atcg_search_cards, atcg_list_set_cards or atcg_search_sealed.",
+    "Card name search matches the start of the name, ignoring case: retry with a shorter prefix before concluding a card is missing.",
+    "There is no price history, no graded price and no photo recognition."
+  ]
+}

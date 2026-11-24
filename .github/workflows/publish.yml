@@ -1,0 +1,41 @@
+# Releases go through npm trusted publishing (OIDC): no token in the repository. On npmjs.com, in
+# the settings of `@alltcgapi/mcp`: Trusted publisher → GitHub Actions, organization `alltcgapi`,
+# repository `mcp-server`, workflow `publish.yml`, environment `npm`. The very first version is
+# published by hand (`npm publish --access public`): a trusted publisher can only be attached to a
+# package that already exists. The file name is part of the trust: rename it and the next release is
+# refused.
+name: Publish
+
+on:
+  push:
+    tags: ['v*']
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    environment: npm
+    permissions:
+      id-token: write
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          # npm >= 11.5.1 is what trusted publishing needs; Node 24 ships it.
+          node-version: '24'
+          registry-url: 'https://registry.npmjs.org'
+      - name: Tag must match the package version
+        run: |
+          tag="${GITHUB_REF_NAME#v}"
+          version="$(node -p "require('./package.json').version")"
+          if [ "$tag" != "$version" ]; then
+            echo "tag v$tag does not match package.json ($version)" >&2
+            exit 1
+          fi
+      - run: npm ci
+      # The manifests test refuses a release where server.json, mcp.json or a plugin manifest
+      # carries another version than package.json.
+      - run: npm test
+      # No NODE_AUTH_TOKEN here, on purpose: with one set, even empty, npm tries the token path
+      # instead of OIDC.
+      - run: npm publish --access public --provenance

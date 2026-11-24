@@ -1,0 +1,23 @@
+{
+  "name": "alltcgapi",
+  "version": "0.1.0",
+  "description": "Trading card data for agents: cards, sets, sealed products and current Cardmarket (EUR) and TCGplayer (USD) quotes across 19 games, each with its source and date.",
+  "author": {
+    "name": "alltcgapi.com"
+  },
+  "homepage": "https://alltcgapi.com/docs",
+  "repository": "https://github.com/alltcgapi/mcp-server",
+  "license": "MIT",
+  "keywords": ["tcg", "trading-card-game", "card-prices", "cardmarket", "tcgplayer", "mcp"],
+  "variables": {
+    "type": "object",
+    "properties": {
+      "ALLTCG_API_KEY": {
+        "type": "string",
+        "title": "alltcgapi.com API key",
+        "description": "Sent only to api.alltcgapi.com. How to get one: https://alltcgapi.com/free-api-key"
+      }
+    },
+    "required": ["ALLTCG_API_KEY"]
+  }
+}

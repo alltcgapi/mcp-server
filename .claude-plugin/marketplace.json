@@ -1,0 +1,15 @@
+{
+  "name": "alltcgapi",
+  "description": "The alltcgapi.com plugin: card, set, sealed product and price lookups across 19 trading card games for Claude.",
+  "owner": {
+    "name": "alltcgapi.com",
+    "url": "https://alltcgapi.com"
+  },
+  "plugins": [
+    {
+      "name": "alltcgapi",
+      "source": "./",
+      "description": "Trading card data for agents: cards, sets, sealed products and current Cardmarket (EUR) and TCGplayer (USD) quotes across 19 games, each with its source and date."
+    }
+  ]
+}

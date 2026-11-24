@@ -1,0 +1,56 @@
+{
+  "name": "@alltcgapi/mcp",
+  "version": "0.1.0",
+  "description": "MCP server for alltcgapi: cards, sets, sealed products and current Cardmarket and TCGplayer prices across 19 trading card games, from any MCP client.",
+  "license": "MIT",
+  "type": "module",
+  "engines": {
+    "node": ">=20"
+  },
+  "bin": {
+    "alltcgapi-mcp": "dist/index.js"
+  },
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "mcpName": "com.alltcgapi/mcp",
+  "keywords": [
+    "mcp",
+    "modelcontextprotocol",
+    "tcg",
+    "trading-card-game",
+    "card-prices",
+    "cardmarket",
+    "tcgplayer",
+    "pokemon",
+    "yugioh",
+    "one-piece",
+    "lorcana",
+    "agent",
+    "ai"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alltcgapi/mcp-server.git"
+  },
+  "homepage": "https://alltcgapi.com/docs",
+  "bugs": {
+    "url": "https://github.com/alltcgapi/mcp-server/issues"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "prepublishOnly": "npm run build",
+    "test": "npm run build && node --test tests/*.test.mjs"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/server": "^2.4.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.7",
+    "typescript": "^5.7.3"
+  }
+}
