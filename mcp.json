@@ -2,7 +2,7 @@
   "mcpServers": {
     "alltcgapi": {
       "command": "npx",
-      "args": ["-y", "@alltcgapi/mcp@0.1.0"],
+      "args": ["-y", "@alltcgapi/mcp@0.1.1"],
       "env": {
         "ALLTCG_API_KEY": "${ALLTCG_API_KEY}"
       }

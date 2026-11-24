@@ -1,6 +1,6 @@
 {
   "name": "alltcgapi",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Trading card data for agents: cards, sets, sealed products and current Cardmarket (EUR) and TCGplayer (USD) quotes across 19 games, each with its source and date.",
   "author": {
     "name": "alltcgapi.com"

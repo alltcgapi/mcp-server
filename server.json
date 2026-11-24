@@ -3,7 +3,7 @@
   "name": "com.alltcgapi/mcp",
   "title": "alltcgapi",
   "description": "Cards, sets, sealed products and current Cardmarket (EUR) and TCGplayer (USD) prices for 19 TCGs.",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "websiteUrl": "https://alltcgapi.com/docs",
   "repository": {
     "url": "https://github.com/alltcgapi/mcp-server",
@@ -14,7 +14,7 @@
       "registryType": "npm",
       "registryBaseUrl": "https://registry.npmjs.org",
       "identifier": "@alltcgapi/mcp",
-      "version": "0.1.0",
+      "version": "0.1.1",
       "transport": {
         "type": "stdio"
       },
